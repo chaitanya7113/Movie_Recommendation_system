@@ -3,6 +3,7 @@ import pandas as pd
 import pickle
 import gzip
 import shutil
+import os
 
 from  util_1 import set_background_image,image_url,fetch_poster,literal_eval
 set_background_image(image_url)
@@ -31,7 +32,10 @@ def recommend(movie):
 
 
 
-movie_list = pickle.load(open('data_\movies_data.pkl','rb'))
+file_path = os.path.join(os.path.dirname(__file__), 'data_', 'movies_data.pkl')
+
+with open(file_path, 'rb') as f:
+    movie_list = pickle.load(f)
 movies_data = pd.DataFrame(movie_list)
 with gzip.open('data_/similarity.pkl.gz', 'rb') as f:
     similarity = pickle.load(f)
