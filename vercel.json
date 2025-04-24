@@ -1,4 +1,5 @@
 {
-    "source": "app.py",
-    "destination": "/api/feedback/:id"
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/" }
+    ]
   }
