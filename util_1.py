@@ -18,7 +18,7 @@ def set_background_image(image_url):
     )
 
 # Your background image URL
-image_url = "://images.unsplash.com/photo-1616530940355-351fabd9524b?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+image_url = "https://images.unsplash.com/photo-1616530940355-351fabd9524b?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 
 
 def fetch_poster(movie_id):
@@ -34,7 +34,10 @@ def fetch_poster(movie_id):
     response = requests.get(url, headers=headers)
     response = response.json()
     poster_path = response['poster_path']
-    full_path = "https://image.tmdb.org/t/p/w500/" + poster_path
+    if poster_path!=None:
+        full_path = "https://image.tmdb.org/t/p/w500/" + poster_path
+    else:
+        full_path="image_/poster_comman.jpg"
     return full_path
     
 
