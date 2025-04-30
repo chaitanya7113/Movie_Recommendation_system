@@ -53,6 +53,11 @@ moive id , keyword , cast , crew(direcator only) and etc.
 - **convert into pickle**- We convert the refine movies_data into a pickle file that store move data into binary formate
 
 
+## 💻 Interface
+
+- **Streamlit** - streamlit is an open-source Python library that makes it easy to build interactive web apps for machine learning and data projects — without needing to know HTML, CSS, or JavaScript.
+
+- **Stramlit-Server** - this app currently run on the streamlit server, this server only provide for the stramlit user
 
 
 
