@@ -60,21 +60,24 @@ if(select_movie!=None):
         st.markdown(movies_data[movies_data['title'] == select_movie]['overview'].values[0])
 
 if st.button("Show Recommend"):
-    recommended_movie_names,recommended_movie_posters = recommend(select_movie)
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        st.image(recommended_movie_posters[0])
-        st.text(recommended_movie_names[0])
-    with col2:
-        st.image(recommended_movie_posters[1])
-        st.text(recommended_movie_names[1])
-    with col3:
-        st.image(recommended_movie_posters[2])
-        st.text(recommended_movie_names[2])
-    with col4:
-        st.image(recommended_movie_posters[3])
-        st.text(recommended_movie_names[3])
-    with col5:
-        st.image(recommended_movie_posters[4])
-        st.text(recommended_movie_names[4])
+    if select_movie!=None:
+        recommended_movie_names,recommended_movie_posters = recommend(select_movie)
+        col1, col2, col3, col4, col5 = st.columns(5)
+        with col1:
+            st.image(recommended_movie_posters[0])
+            st.text(recommended_movie_names[0])
+        with col2:
+            st.image(recommended_movie_posters[1])
+            st.text(recommended_movie_names[1])
+        with col3:
+            st.image(recommended_movie_posters[2])
+            st.text(recommended_movie_names[2])
+        with col4:
+            st.image(recommended_movie_posters[3])
+            st.text(recommended_movie_names[3])
+        with col5:
+            st.image(recommended_movie_posters[4])
+            st.text(recommended_movie_names[4])
+    else:
+        st.markdown("Please select movie")
 
